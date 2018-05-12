@@ -1,15 +1,20 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { TOGGLE_GRID } from '../../actions';
 import Home from '../Home';
 import Checkout from '../Checkout';
 import Dev from '../../components/Dev';
+import DevGrid from '../../components/Dev/Grid';
 
-const App = () => (
+const App = (props) => (
   <div>
+    <DevGrid display={props.dev.showGrid} />
     <header>
       <Link to="/">Home</Link>
       <Link to="/checkout">Checkout</Link>
       <Link to="/dev">Dev</Link>
+      <button className="dev-grid-button" onClick={props.toggleGrid}>Grid</button>
     </header>
 
     <main>
@@ -20,4 +25,15 @@ const App = () => (
   </div>
 );
 
-export default App;
+const AppContainer = connect(
+    (state) => state,
+    (dispatch) => ({
+        toggleGrid: () => {
+            dispatch({
+                type: TOGGLE_GRID
+            });
+        }
+    })
+)(App);
+
+export default AppContainer;

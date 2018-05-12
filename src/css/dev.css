@@ -1,0 +1,40 @@
+.dev-grid {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: inline-flex;
+    opacity: 0.3;
+}
+
+.dev-grid.hide {
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+    .dev-grid > *:nth-child(4n) {
+        display: none;
+    }
+    .dev-grid > *:nth-child(4n - 1) {
+        display: none;
+    }
+}
+
+.dev-grid-gutter {
+    width: 1rem;
+    background-color: white;
+}
+
+.dev-grid-col {
+    flex: 1;
+    background-color: pink;
+}
+
+.dev-grid-button {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 10;
+}
