@@ -3,18 +3,14 @@ import PropTypes from 'prop-types';
 
 const BeerItem = (props) => {
     return <div className="beerItem">
-        <img height="300" alt="" src={props.imageUrl}/>
-        <h3>{props.name}</h3>
-        <h4>{props.tagline}</h4>
-        <p className="description">{props.description}</p>
-        <table>
-            <tbody>
-                <tr>
-                    <th>ABV</th>
-                    <td>{props.abv}%</td>
-                </tr>
-            </tbody>
-        </table>
+        <img className="beerItemImage" alt="" src={props.imageUrl}/>
+        <div className="beerItemInfo">
+            <h3 className="beerItemTitle">{props.name}</h3>
+            <h4 className="beerItemTagline">{props.tagline}</h4>
+            <p className="description">{props.description}</p>
+            <p className="beerItemAbv">{`${props.abv}% ABV`}</p>
+            <button className="cta">Add to basket</button>
+        </div>
     </div>
 
 }

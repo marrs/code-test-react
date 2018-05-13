@@ -1,0 +1,33 @@
+.beerItem {
+    display: flex;
+    flex-direction: row;
+}
+
+.beerItemImage {
+    flex-grow: 1;
+    width: 33%;
+    height: 33%;
+    box-sizing: border-box;
+    padding-right: 0.5em;
+
+}
+
+.beerItemInfo {
+    padding-left: 0.5em;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.beerItemAbv {
+    flex-grow: 1;
+}
+
+.beerItemTitle {
+    margin: 0;
+}
+
+.beerItemTagline {
+    font-size: 0.75em;
+    margin-top: 0;
+}

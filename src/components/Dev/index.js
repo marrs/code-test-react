@@ -19,7 +19,7 @@ const Dev = (props) => {
         <Route exact path={`${currentPath}/components/:name`} component={IsolateComponent} />
         { match.isExact && componentsList({
             BeerItem: {
-                name: "Pilsner Lager",
+                name: "Pilsen Lager",
                 imageUrl: "https://images.punkapi.com/v2/4.png",
                 abv: "5.0",
                 tagline: "A Real Bitter Experience.",

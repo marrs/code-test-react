@@ -22,6 +22,17 @@
     }
 }
 
+@media screen and (max-width: 460px) {
+    .dev-grid > * {
+        display: none;
+    }
+    .dev-grid > *:nth-child(8n) ,
+    .dev-grid > *:nth-child(8n -1) ,
+    .dev-grid > *:nth-child(25) {
+        display: block;
+    }
+}
+
 .dev-grid-gutter {
     width: 1rem;
     background-color: white;

@@ -1,4 +1,9 @@
+@import './css/normalize.css';
 @import './css/dev.css';
+@import './css/page-layout.css';
+@import './css/theme.css';
+@import './css/components/beer-item.css';
+
 body {
   margin: 0;
   padding: 0;

@@ -10,7 +10,7 @@ function extractPropsFromQueryString(str) {
     for (let i = 0; i < queries.length; ++i) {
         let query = queries[i];
         if (query.indexOf('props=') === 0) {
-            return JSON.parse(query.substr(6));
+            return JSON.parse(window.decodeURIComponent(query.substr(6)));
         }
     }
     return {};
