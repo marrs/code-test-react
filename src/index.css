@@ -3,6 +3,7 @@
 @import './css/page-layout.css';
 @import './css/theme.css';
 @import './css/components/beer-item.css';
+@import './css/components/product-catalogue.css';
 
 body {
   margin: 0;

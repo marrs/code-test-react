@@ -1,5 +1,5 @@
 .dev-grid {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     top: 0;
@@ -13,7 +13,7 @@
     display: none;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 749px) {
     .dev-grid > *:nth-child(4n) {
         display: none;
     }
@@ -22,7 +22,7 @@
     }
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 459px) {
     .dev-grid > * {
         display: none;
     }
@@ -48,4 +48,8 @@
     right: 1em;
     top: 1em;
     z-index: 10;
+}
+
+.devComponent {
+    border-top: 1px solid black;
 }

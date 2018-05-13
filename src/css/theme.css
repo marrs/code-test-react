@@ -2,14 +2,29 @@ body {
     color: #3d4b50
 }
 
+header ,
+header a:link ,
+header a:visited {
+    background-color: #3d4b50;
+    color: white;
+    text-decoration: none;
+}
+
+header a:link {
+    padding: 0 0.5em;
+}
+
+header a:link:first-child {
+    padding-left: 0;
+}
+
 button {
-    border: 1px solid darkblue;
-    background: lightblue;
+    border: 1px solid #3d4b50;
+    background: white;
 }
 
 .cta {
-    background: #86e6a2;
+    background: #37e470;
     border: 1px solid #65a978;
-    color: #457554;
     line-height: 2em;
 }

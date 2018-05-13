@@ -4,12 +4,29 @@ import { Route, Link } from 'react-router-dom';
 import * as Components from '../';
 import IsolateComponent from './IsolateComponent';
 
-function componentsList(props) {
-    return <div>
-        <h2>Components</h2>
-        <h3><Link to={`/dev/components/BeerItem?props=${JSON.stringify(props.BeerItem)}`}>BeerItem</Link></h3>
-        <Components.BeerItem {...props.BeerItem} />
-    </div>
+const beerItemStub = {
+    id: 1,
+    name: "Pilsen Lager",
+    imageUrl: "https://images.punkapi.com/v2/4.png",
+    abv: "5.0",
+    tagline: "A Real Bitter Experience.",
+    description: "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
+    firstBrewed: "09/2007",
+    foodPairing:[
+        "Spicy chicken tikka masala","Grilled chicken quesadilla","Caramel toffee cake"
+        ],
+    brewersTips: "The earthy and floral aromas from the hops can be overpowering. Drop a little Cascade in at the end of the boil to lift the profile with a bit of citrus."
+};
+
+function componentsList(components) {
+    return Object.keys(components).map((componentName, idx) => {
+        let Component = Components[componentName];
+        let props = components[componentName];
+        return <div key={`component-${idx}`} className="devComponent">
+            <h3><Link to={`/dev/components/${componentName}?props=${JSON.stringify(props)}`}>{componentName}</Link></h3>
+            <Component {...props} />
+        </div>
+    });
 }
 
 const Dev = (props) => {
@@ -17,18 +34,11 @@ const Dev = (props) => {
     let currentPath = match.path;
     return <div>
         <Route exact path={`${currentPath}/components/:name`} component={IsolateComponent} />
+        { match.isExact && <h2 key="component-title">Components</h2> }
         { match.isExact && componentsList({
-            BeerItem: {
-                name: "Pilsen Lager",
-                imageUrl: "https://images.punkapi.com/v2/4.png",
-                abv: "5.0",
-                tagline: "A Real Bitter Experience.",
-                description: "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
-                firstBrewed: "09/2007",
-                foodPairing:[
-                    "Spicy chicken tikka masala","Grilled chicken quesadilla","Caramel toffee cake"
-                ],
-                brewersTips: "The earthy and floral aromas from the hops can be overpowering. Drop a little Cascade in at the end of the boil to lift the profile with a bit of citrus."
+            BeerItem: beerItemStub,
+            ProductCatalogue: {
+                items: Array(10).fill(beerItemStub)
             }
         }) }
     </div>
