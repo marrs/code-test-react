@@ -1,9 +1,9 @@
-.beerItem {
+.product {
     display: flex;
     flex-direction: row;
 }
 
-.beerItemImage {
+.productImage {
     flex-grow: 1;
     width: 33%;
     height: 33%;
@@ -12,22 +12,22 @@
 
 }
 
-.beerItemInfo {
+.productInfo {
     padding-left: 0.5em;
     flex-grow: 2;
     display: flex;
     flex-direction: column;
 }
 
-.beerItemAbv {
+.productAbv {
     flex-grow: 1;
 }
 
-.beerItemTitle {
+.productTitle {
     margin: 0;
 }
 
-.beerItemTagline {
+.productTagline {
     font-size: 0.75em;
     margin-top: 0;
 }

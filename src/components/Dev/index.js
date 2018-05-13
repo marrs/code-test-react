@@ -36,7 +36,7 @@ const Dev = (props) => {
         <Route exact path={`${currentPath}/components/:name`} component={IsolateComponent} />
         { match.isExact && <h2 key="component-title">Components</h2> }
         { match.isExact && componentsList({
-            BeerItem: beerItemStub,
+            Product: beerItemStub,
             ProductCatalogue: {
                 items: Array(10).fill(beerItemStub)
             }

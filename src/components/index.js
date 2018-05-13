@@ -1,4 +1,4 @@
-import BeerItem from './BeerItem';
+import Product from './Product';
 import ProductCatalogue from './ProductCatalogue';
 
-export { BeerItem, ProductCatalogue }
+export { Product, ProductCatalogue }
