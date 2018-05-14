@@ -11,6 +11,15 @@
     margin: 1em 0;
 }
 
+.productCatalogueItem .cta {
+    display: none;
+    cursor: pointer;
+}
+
+.productCatalogueItem:hover .cta {
+    display: block;
+}
+
 @media screen and (min-width: 460px) {
     .productCatalogueItem {
         width: 50%;
