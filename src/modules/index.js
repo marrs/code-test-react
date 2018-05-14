@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import beerReducer from './beer';
+import shopReducer from './shop';
 import devReducer from './dev';
 
 export default combineReducers({
     router: routerReducer,
-    beer: beerReducer,
+    shop: shopReducer,
     dev: devReducer
 });
