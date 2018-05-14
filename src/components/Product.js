@@ -7,8 +7,8 @@ const Product = (props) => {
         <div className="productInfo">
             <h3 className="productTitle">{props.name}</h3>
             <h4 className="productTagline">{props.tagline}</h4>
-            <p className="description">{props.description}</p>
             <p className="productAbv">{`${props.abv}% ABV`}</p>
+            <p className="productDescription">{props.description}</p>
             <button className="cta">Add to basket</button>
         </div>
     </div>

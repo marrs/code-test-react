@@ -24,7 +24,8 @@ button {
 }
 
 .cta {
-    background: #37e470;
+    background: #3d4b50;
+    color: white;
     border: 1px solid #65a978;
     line-height: 2em;
 }
