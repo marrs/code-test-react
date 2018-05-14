@@ -1,10 +1,14 @@
 body {
-    color: #3d4b50
+    color: #3d4b50;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
 header ,
 header a:link ,
-header a:visited {
+header a:visited ,
+.checkoutTableHeader {
     background-color: #3d4b50;
     color: white;
     text-decoration: none;

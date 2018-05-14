@@ -2,12 +2,7 @@
 @import './css/dev.css';
 @import './css/page-layout.css';
 @import './css/theme.css';
+@import './css/components/checkout.css';
 @import './css/components/product.css';
 @import './css/components/product-catalogue.css';
 @import './css/components/load-more.css';
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}

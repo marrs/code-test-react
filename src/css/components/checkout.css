@@ -1,0 +1,15 @@
+.checkoutTable {
+    width: 100%;
+}
+
+.checkoutTableHeader {
+}
+
+.checkoutTableHeader th {
+    text-align: left;
+}
+
+.checkoutTableHeader th ,
+.checkoutTable td {
+    padding: 0.5em;
+}

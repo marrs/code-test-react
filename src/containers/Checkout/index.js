@@ -1,9 +1,10 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import Checkout from '../../components/Checkout';
 
-const Checkout = () => (
-  <div>
-    <h1>Checkout page</h1>
-  </div>
-);
+const CheckoutContainer = connect(
+    (state) => ({ basket: state.shop.basket }),
+    (dispatch) => ({
+    })
+)(Checkout);
 
-export default Checkout;
+export default CheckoutContainer;

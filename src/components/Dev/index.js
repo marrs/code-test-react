@@ -40,8 +40,27 @@ const Dev = (props) => {
             ProductCatalogue: {
                 productData: Array(10).fill(beerItemStub)
             },
-            LoadMore: {}
-        }) }
+            LoadMore: {},
+            Checkout: {
+                basket: {
+                    1: {
+                        id: 1,
+                        name: 'Name of a beer',
+                        qty: 3
+                    },
+                    2: {
+                        id: 2,
+                        name: 'Name of a different kind of beer',
+                        qty: 10
+                    },
+                    3: {
+                        id: 3,
+                        name: 'Name of yet another alcoholic beverage',
+                        qty: 8
+                    }
+                }
+            }
+        })}
     </div>
 }
 
