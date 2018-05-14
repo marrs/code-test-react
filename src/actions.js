@@ -35,7 +35,7 @@ export const addToBasket = ({ productId, name, qty }) => {
     return function(dispatch) {
         dispatch({
             type: ADD_TO_BASKET,
-            data: { productId }
+            data: { productId, name, qty}
         });
     }
 }

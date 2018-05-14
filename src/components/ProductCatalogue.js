@@ -6,8 +6,8 @@ import Product from './Product';
 const ProductCatalogue = (props) => {
     let { addToBasket, productData } = props;
     return <div className="productCatalogue">
-        { props.items.map((item, idx) => {
-            return <div key={idx} className="productCatalogueItem"><Product { ...item } /></div>
+        { productData.map((item, idx) => {
+            return <div key={idx} className="productCatalogueItem"><Product addToBasket={addToBasket} { ...item } /></div>
         })};
     </div>
 };

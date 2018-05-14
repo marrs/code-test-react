@@ -33,13 +33,26 @@ const beerReducer = (state, action) => {
             return { isFetchingBeers: false, ...state };
         }
         case ADD_TO_BASKET: {
-            console.log("ADD TO BASKET", action);
+            let { productId, name, qty } = action.data;
+            let newBasket = { ...state.basket };
+            if (newBasket[productId]) {
+                newBasket[productId].qty += qty;
+            } else {
+                newBasket[productId] = {
+                    productId, name, qty
+                };
+            }
+            return {
+                ...state,
+                basket: newBasket
+            };
         }
         default: {
             return state || {
                 page: 0,
                 count: 10,
-                productData: []
+                productData: [],
+                basket: {}
             };
         }
     }
