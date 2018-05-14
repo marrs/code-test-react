@@ -1,0 +1,25 @@
+.loadMore {
+    position: relative;
+    height: 100%;
+    min-height: 16em;
+    width: 100%;
+}
+
+.loadMore .cta {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.loadMoreSpinner {
+    width: 100%;
+    height: 90%;
+    min-height: 16em;
+    background: top center no-repeat url('/beer-barrel-icon.svg');
+}
+
+.loadMoreSpinner.isLoading {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}

@@ -16,7 +16,7 @@ const beerReducer = (state, action) => {
                 ...state,
                 isFetchingBeers: false,
                 beerPage: action.data.page,
-                productData: action.data.map((item) => {
+                productData: state.productData.concat(action.data.map((item) => {
                     return {
                         id: item.id,
                         name: item.name,
@@ -25,7 +25,7 @@ const beerReducer = (state, action) => {
                         abv: item.abv,
                         imageUrl: item.image_url
                     };
-                }),
+                })),
             };
         }
         case FETCH_BEERS.failure: {

@@ -4,6 +4,7 @@
 @import './css/theme.css';
 @import './css/components/product.css';
 @import './css/components/product-catalogue.css';
+@import './css/components/load-more.css';
 
 body {
   margin: 0;

@@ -38,8 +38,9 @@ const Dev = (props) => {
         { match.isExact && componentsList({
             Product: beerItemStub,
             ProductCatalogue: {
-                items: Array(10).fill(beerItemStub)
-            }
+                productData: Array(10).fill(beerItemStub)
+            },
+            LoadMore: {}
         }) }
     </div>
 }
