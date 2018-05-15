@@ -6,27 +6,25 @@
 
 .productImage {
     flex-grow: 1;
-    width: auto;
-    height: auto;
-    max-width: 33%;
-    max-height: 100%;
+    width: 33%;
     box-sizing: border-box;
     padding-right: 0.5em;
-
 }
 
 .productInfo {
-    padding-left: 0.5em;
     flex-grow: 2;
     display: flex;
     flex-direction: column;
     position: relative;
+    padding-left: 0.5em;
 }
 
 .productInfo .cta {
     position: absolute;
     bottom: 0;
+    margin-left: -0.5em;
     width: 100%;
+    padding: 0;
 }
 
 .productAbv {
