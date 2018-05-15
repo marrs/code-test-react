@@ -48,4 +48,46 @@ describe('shop reducer', () => {
             expect(result.isFetchingBeers).toBeFalsy();
         });
     });
+
+    describe(ADD_TO_BASKET, () => {
+        let stubBasketPayload = {
+            data: { productId: 1, name: 'foo', qty: 1 }
+        };
+
+        it("Adds an object to basket using its id as the key", () => {
+            let result = shopReducer({ basket: {} }, action(ADD_TO_BASKET, stubBasketPayload));
+            expect(result.basket[stubBasketPayload.data.productId]).toBeDefined();
+        });
+
+        it("Adds an object to basket containing id, name, and qty properties", () => {
+            let result = shopReducer({ basket: {} }, action(ADD_TO_BASKET, stubBasketPayload));
+            expect(result.basket[stubBasketPayload.data.productId]).toEqual(stubBasketPayload.data);
+        });
+
+        it("Throws an error if qty is missing", () => {
+            expect(function() {
+                shopReducer({ basket: {} }, action(ADD_TO_BASKET, {data: {productId: 1, name: 'foo'}}));
+            }).toThrow();
+        });
+
+        it("Throws an error if name is missing", () => {
+            expect(function() {
+                shopReducer({ basket: {} }, action(ADD_TO_BASKET, {data: {productId: 1, qty: 1}}));
+            }).toThrow();
+        });
+
+        it("Throws an error if productId is missing", () => {
+            expect(function() {
+                shopReducer({ basket: {} }, action(ADD_TO_BASKET, {data: {name: 'foo', qty: 1}}));
+            }).toThrow();
+        });
+
+        it("Adds quantities if a product is added that is already in basket", () => {
+            let existingItems = { basket: {1: { qty: 3}} };
+            let newItem = { productId: 1, name: 'foo', qty: 2 };
+
+            let result = shopReducer(existingItems, action(ADD_TO_BASKET, { data: newItem }));
+            expect(result.basket[1].qty).toBe(5);
+        });
+    });
 });

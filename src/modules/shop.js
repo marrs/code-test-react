@@ -3,6 +3,14 @@ import {
     ADD_TO_BASKET
 } from '../actions';
 
+function assertPropertiesArePresent(obj, props) {
+    props.forEach(prop => {
+        if (!obj[prop]) {
+            throw new Error("Missing property: " + prop);
+        }
+    });
+}
+
 const shopReducer = (state, action) => {
     switch(action.type) {
         case FETCH_BEERS.request: {
@@ -29,10 +37,10 @@ const shopReducer = (state, action) => {
             };
         }
         case FETCH_BEERS.failure: {
-            console.log('FAILED TO FETCH BEERS', action);
             return { isFetchingBeers: false, ...state };
         }
         case ADD_TO_BASKET: {
+            assertPropertiesArePresent(action.data, ['productId', 'name', 'qty']);
             let { productId, name, qty } = action.data;
             let newBasket = { ...state.basket };
             if (newBasket[productId]) {
