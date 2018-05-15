@@ -9,6 +9,7 @@
 .productCatalogueItem {
     box-sizing: border-box;
     margin: 1em 0;
+    height: 370px;
 }
 
 .productCatalogueItem .cta {
@@ -25,10 +26,7 @@
         width: 50%;
     }
 
-    .productCatalogueItem:nth-child(2n-1) {
-        padding-right: 0.5em;
-    }
-
+    .productCatalogueItem:nth-child(2n-1) ,
     .productCatalogueItem:nth-child(2n) {
         padding-left: 0.5em;
     }
@@ -45,21 +43,10 @@
     }
 
     .productCatalogueItem:nth-child(1) ,
-    .productCatalogueItem:nth-child(3n+1) {
-        padding-left: 0;
-        padding-right: 0.5em;
-    }
-
+    .productCatalogueItem:nth-child(3n+1) ,
     .productCatalogueItem:last-child ,
     .productCatalogueItem:nth-child(3n) {
-        padding-right: 0;
-        padding-left: 0.5em;
-    }
-
-    .productCatalogueItem {
-        height: 370px;
-    }
-
-    .productCatalogueItem {
+        padding-left: 0;
+        padding-right: 0.5em;
     }
 }
