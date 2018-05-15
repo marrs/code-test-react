@@ -20,9 +20,14 @@ export const FETCH_BEERS = Object.freeze(createFetchActionTypes(FETCH_BEERS_ACTI
 export const fetchBeers = (data) => {
     return {
         type: FETCH_BEERS_ACTION,
+        meta: {
+            page: data.page
+        },
         $payload: {
             url: `https://api.punkapi.com/v2/beers?page=${data.page}&per_page=10`,
-            options: { cache: "force-cache" } // XXX Prevents me from overloading API with too many requests
+            options: {
+                cache: "force-cache" // Uncomment to prevent browser from overloading API with too many requests
+            }
         }
     };
 }

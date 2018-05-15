@@ -3,7 +3,7 @@ import {
     ADD_TO_BASKET
 } from '../actions';
 
-const beerReducer = (state, action) => {
+const shopReducer = (state, action) => {
     switch(action.type) {
         case FETCH_BEERS.request: {
             return {
@@ -15,7 +15,7 @@ const beerReducer = (state, action) => {
             return {
                 ...state,
                 isFetchingBeers: false,
-                beerPage: action.data.page,
+                page: action.meta.page,
                 productData: state.productData.concat(action.data.map((item) => {
                     return {
                         id: item.id,
@@ -58,4 +58,4 @@ const beerReducer = (state, action) => {
     }
 }
 
-export default beerReducer;
+export default shopReducer;
